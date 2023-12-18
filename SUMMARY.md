@@ -1,3 +1,3 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [10 Common Ruby Developer Idiosyncrasies](README.md)

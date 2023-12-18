@@ -1,21 +1,9 @@
-# Initial page
+---
+description: >-
+  Here are ten quirks I often see in Ruby code. Learn to turn these
+  idiosyncrasies into idioms.
+---
 
-## Getting Super Powers
+# 10 Common Ruby Developer Idiosyncrasies
 
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
-&#x20;Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-
+As a contract Ruby developer, I am exposed to lots and lots of code. Some code is readable;  some obfuscated. Some code eschews whitespace, as if carriage returns were a scarce resource, while other code resembles a living room fashioned by Vincent Van Duysen.&#x20;
