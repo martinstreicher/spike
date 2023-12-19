@@ -1,3 +1,3 @@
 # Table of contents
 
-* [10 Common Ruby Developer Idiosyncrasies](README.md)
+* [Ten Faux Pas Ruby Developers Should Not Make](README.md)
