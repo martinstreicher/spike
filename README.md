@@ -6,13 +6,23 @@ description: >-
 
 # Ten Faux Pas Ruby Developers Should Not Make
 
-As a contract software developer, I am exposed to lots and lots of Ruby code. Some code is readable;  some obfuscated. Some code eschews whitespace, as if carriage returns were a scarce natural resource, while other code resembles a living room fashioned by Vincent Van Duysen. Code, like the people who author it, varies.&#x20;
+As a contract software developer, I am exposed to lots and lots of Ruby code. Some code is readable, some obfuscated. Some code eschews whitespace, as if carriage returns were a scarce natural resource, while other code resembles a living room fashioned by Vincent Van Duysen. Code, like the people who author it, varies. Yet it's ideal to minimize variation. Time and effort are best spent on novel problems.&#x20;
 
-Yet it's ideal to minimize variation: time and effort are best spent on novel problems. For example, Rails emphasizes efficiency favoring convention over configuration. I can typically clone, customize, and boot any Rails project with little effort. Rails codebases are structurally very similar.&#x20;
+Ruby developers can gain efficiency with a tool such as Rubocop, which unifies style across individual files in a single project and even across many projects. Rails boosts cognition, too, favoring convention over configuration. Rails codebases are identical in places and overall quite similar. &#x20;
 
-In that spirit, Rails favors "Convention Over Configuration",Rails codebases very similar, and tools such as Rubocop can unify style across individual files and even projects. Much of the rest falls to Ruby idioms, those "structural forms peculiar to \[the] language."$$^1$$ For example, Ruby syntax is a collection of explicit idioms enforced by the interpreter.  Reopening a class to refine or expand it is an idiom, too. Idioms let us share our code.&#x20;
+Beyond tools and convention, variance is also minimized by idioms, or those "structural forms peculiar to \[the] language."$$^1$$ For example, Ruby's syntax is a collection of explicit idioms enforced by the interpreter. Reopening a Ruby class to refine or expand it is a Ruby idiom, too.&#x20;
 
-But not all Ruby idioms are dogmatic. Others are simply best practices, shorthand, and common usages --  "slang", "shop talk", or "terms of art" -- that experienced Ruby developers read and write. The more adept you are at recognizing and proffering idioms, the better your code will be.  Of course, learning idioms in Ruby is like learning idioms in any second spoken (or programming) language. It takes time and practice.&#x20;
+But not all Ruby idioms are so dogmatic. Most Ruby idioms are best practices, shorthand, and common usages -- "slang" or "terms of art", if you will -- Ruby developers share informally to collaborate on code.  The more adept you are at recognizing and proffering Ruby's idioms, the better your code will be. &#x20;
+
+Learning idioms in Ruby is like learning idioms in any second spoken (or programming) language. It takes time and practice.&#x20;
+
+***
+
+### Gimme an example
+
+If you've delved any into Ruby, you can appreciate how expressive, compact, fun, and flexible it is. Need to generate a result based on some conditions? There are at least three approaches:&#x20;
+
+
 
 For instance, the following blocks of code all achieve the same result, but one is idiomatic to Ruby.&#x20;
 
@@ -29,3 +39,6 @@ end
 ```
 
 Here are ten examples of Ruby code that are not idiomatic and how to rewrite them like a "local".&#x20;
+
+$$^1$$ This definition comes from [Merriam-Webster Online](https://www.merriam-webster.com/dictionary/idiom).&#x20;
+
