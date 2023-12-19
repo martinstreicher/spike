@@ -20,11 +20,9 @@ Learning idioms in Ruby is like learning idioms in any second spoken (or program
 
 ### Gimme an example
 
-If you've delved any into Ruby, you can appreciate how expressive, compact, fun, and flexible it is. Need to generate a result based on some conditions? There are at least three approaches:&#x20;
+If you've delved any into Ruby, you can appreciate how expressive, compact, fun, and flexible it is. For example, `if`/`unless`, `case`, and the ternary operator `?:` all express decisions and which to apply depends on the problem. However, some `if` statements are better than others.&#x20;
 
-
-
-For instance, the following blocks of code all achieve the same result, but one is idiomatic to Ruby.&#x20;
+For instance, the following blocks of code all achieve the same result, but one is idiomatic to Ruby. &#x20;
 
 ```ruby
 if response == 1
