@@ -20,20 +20,37 @@ Learning idioms in Ruby is like learning idioms in any second spoken (or program
 
 ### Gimme an example
 
-If you've delved any into Ruby, you can appreciate how expressive, compact, fun, and flexible it is. For example, `if`/`unless`, `case`, and the ternary operator `?:` all express decisions and which to apply depends on the problem. However, some `if` statements are better than others.&#x20;
+If you've delved any into Ruby, you can appreciate how expressive, compact, fun, and flexible it is. For example, `if`/`unless`, `case`, and the ternary operator `?:` all express decisions and which to apply depends on the problem.&#x20;
 
-For instance, the following blocks of code all achieve the same result, but one is idiomatic to Ruby. &#x20;
+However, per Ruby idiom, some `if` statements are better than others.&#x20;
+
+For instance, the following blocks of code achieve the same result, but one is idiomatic to Ruby. &#x20;
+
+```
+actor = nil 
+
+if response == 1
+  actor = "Groucho"
+elsif response == 2 
+  actor = "Chico" 
+elsif response == 3 
+  actor = "Harpo"
+else
+  actor = "Zeppo" 
+end 
+```
 
 ```ruby
-if response == 1
-  "Groucho"
-elsif response == 2 
-  "Chico" 
-elsif response == 3 
-  "Harpo"
-else
-  "Zeppo" 
-end 
+actor = 
+  if response == 1
+    "Groucho"
+  elsif response == 2 
+    "Chico" 
+  elsif response == 3 
+    "Harpo"
+  else
+    "Zeppo" 
+  end 
 ```
 
 Here are ten examples of Ruby code that are not idiomatic and how to rewrite them like a "local".&#x20;
