@@ -99,9 +99,7 @@ a_list_of_values&.at(index)
 
 ### Collecting results in temporary variables
 
-A common application problem is processing lists of information.  Code may eliminate records due to some criteria; map some value to another value; or separate records from one list to multiple lists. In each of those tasks, you must accumulate a result set.&#x20;
-
-Consider this a solution to pick out all even numbers from a list of integers.
+A common problem is processing lists of information: eliminate records due to some criteria; map one value to another value; or separate one set of records into multiple lists. In each task, you must accumulate a result set. Consider this a solution to pick out all even numbers from a list of integers...
 
 ```ruby
 def even_numbers(list)
@@ -115,13 +113,31 @@ def even_numbers(list)
 end
 ```
 
+The code creates an empty list to aggregate results and iterates over the list, accumulating the even values. Finally, it returns the list. This code serves the purpose, but is not very idiomatic. Instead, a better approach is to use Ruby's enumerable methods.&#x20;
+
+```
+def even_numbers(list)
+  even_numbers.select(&:even?) # shorthand for `.select { |v| v.even? }`
+end 
+```
+
+`select` iterates over each element in the list and chooses those where even is true`.`
+
+Here's another approach useful for more complicated transforms.&#x20;
+
+```
+// Some code
+```
+
 ### Sorting and filtering in memory
 
 ### Next Steps
 
-I highly recommend reading the documentation for Ruby's core classes and modules, including `Array`, `Hash`, and `Enumerable.` Each is a trove of tools and chances are you can find a handy implement to slice and dice your data.&#x20;
+I highly recommend reading the documentation for Ruby's core classes and modules, including `Array`, `Hash`, and `Enumerable.` Each is a trove of tools. Write small code samples to learn how each one works. &#x20;
 
-Also, intergrate Rubocop into your workflow, even your text editor. Rubocop keeps your code looking nice, but it can also point out where code is idiosyncratic. Writing code with Rubocop assistance is one of the best ways to create the Ruby way.&#x20;
+Integrate Rubocop into your workflow, even your text editor. Rubocop keeps your code looking nice, but it can also point out where code is idiosyncratic. Writing code with Rubocop assistance is one of the best ways to create the Ruby way.&#x20;
+
+Finally, read other developers' code, especially open source Ruby projects.&#x20;
 
 ***
 
