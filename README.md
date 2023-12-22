@@ -117,7 +117,11 @@ end
 
 ### Sorting and filtering in memory
 
+### Next Steps
 
+I highly recommend reading the documentation for Ruby's core classes and modules, including `Array`, `Hash`, and `Enumerable.` Each is a trove of tools and chances are you can find a handy implement to slice and dice your data.&#x20;
+
+Also, intergrate Rubocop into your workflow, even your text editor. Rubocop keeps your code looking nice, but it can also point out where code is idiosyncratic. Writing code with Rubocop assistance is one of the best ways to create the Ruby way.&#x20;
 
 ***
 
