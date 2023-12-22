@@ -20,7 +20,7 @@ Learning idioms in Ruby is like learning idioms in any second spoken (or program
 
 ### Gimme an example
 
-If you've delved any into Ruby, you can appreciate how expressive, compact, fun, and flexible it is. Any given problem can be solved in a number of ways. For example, `if`/`unless`, `case`, and the ternary operator `?:` all express decisions and what to apply depends on the problem.&#x20;
+If you've delved any into Ruby, you can appreciate how expressive, compact, fun, and flexible it is. Any given problem can be solved in a number of ways. For example, `if`/`unless`, `case`, and the ternary operator `?:` all express decisions and which to apply depends on the problem.&#x20;
 
 However, per Ruby idiom, some `if` statements are better than others. For instance, the following blocks of code achieve the same result, but one is idiomatic to Ruby. &#x20;
 
@@ -51,15 +51,75 @@ actor =
   end 
 ```
 
-Almost every Ruby statement yields a value, including `if`, which returns the value of the final statement of the body in the matching condition. The latter block of code leverages this behavior. If `response` is `2`, `actor` is set to `Chico`. The latter block is idiomatic to Ruby.&#x20;
+Almost every Ruby statement yields a value, including `if`, which returns the value of the final statement of the block in the matching condition. The latter version of the `if` statement code leverages this behavior. If `response` is `2`, `actor` is set to `Chico`. Assigning the result of an `if` statement is idiomatic to Ruby.&#x20;
 
-Here are ten more examples of non-idiomatic Ruby code I often see and how to rewrite them like a "local".&#x20;
+Here are ten examples of non-idiomatic Ruby code I often see and how to rewrite them like a "local".&#x20;
 
 ***
 
-### Long expressions to check for \`nil\`
+### Long expressions to avoid \`nil\`
 
-`nil` represents "nothing" in Ruby. It's a legitimate value, is its own class (`NilClass`), and thus has methods. Like other classes, if you call a method not defined on `nil`, Ruby throws an exception akin to `undefined method 'sort' for nil:NilClass`.&#x20;
+`nil` represents "nothing" in Ruby. It's a legitimate value, is its own class (`NilClass`), and has methods. Like other classes, if you call a method not defined on `nil`, Ruby throws an exception akin to `undefined method 'xxx' for nil:NilClass`.&#x20;
 
-$$^1$$ This definition comes from [Merriam-Webster Online](https://www.merriam-webster.com/dictionary/idiom).&#x20;
+To avoid this exception, you must first test a value to determine if it's `nil.`If the value references another value, you may have to test for `nil` again. For example, code such as this is both common and required:
+
+```ruby
+if user && user.plan && user.plan.name == 'Standard'
+  // ... come code
+end 
+```
+
+The trouble is that such a long chain of assertions is unwieldy. Imagine having to repeat the same condition every time you have to reference the user's plan name.&#x20;
+
+Instead, use Ruby's safe navigation operator, `&.`It is shorthand for "If a method is called on nil, return nil; otherwise, call the method as normal."  The code above reduces to the much more readable...
+
+```ruby
+if user&.plan&.name == 'Standard`
+  // ... some code
+end
+```
+
+If `user` is `nil` and `plan` is `nil`, the expression `user&.plan&.name` is `nil`. &#x20;
+
+An aside: The example above assumes `user` and `plan` represent a custom class instance of some kind. Can you use the safe navigation operator if thee value represents an `Array` or `Hash`? For example...
+
+```
+a_list_of_values[index]
+```
+
+If `a_list_of_values` is `nil`, an exception is thrown. If you try `a _list_of_values&.[index]`, a syntax error occurs. Instead, use `&.` combined with the `Array#at` method.&#x20;
+
+```
+a_list_of_values&.at(index)
+```
+
+***
+
+### Using \`self\` to refer to self
+
+### Collecting results in temporary variables
+
+A common application problem is processing lists of information.  Code may eliminate records due to some criteria; map some value to another value; or separate records from one list to multiple lists. In each of those tasks, you must accumulate a result set.&#x20;
+
+Consider this a solution to pick out all even numbers from a list of integers.
+
+```ruby
+def even_numbers(list)
+  even_numbers = [] 
+
+  list.each do [number]
+    even_numbers << number if number&.even?
+  end
+
+  return even_numbers
+end
+```
+
+### Sorting and filtering in memory
+
+
+
+***
+
+&#x20;$$^1$$This definition comes from [Merriam-Webster Online](https://www.merriam-webster.com/dictionary/idiom).&#x20;
 
