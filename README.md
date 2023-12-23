@@ -99,7 +99,7 @@ a_list_of_values&.at(index)
 
 ### Collecting results in temporary variables
 
-A common problem is processing lists of information: eliminate records due to some criteria; map one value to another value; or separate one set of records into multiple lists. In each task, you must accumulate a result set. Consider this a solution to pick out all even numbers from a list of integers...
+A common code chore is processing lists of records. You might eliminate records due to some criteria; map each value to another value; or separate one set of records into multiple lists. A typical solution is to iterate over the list and accumulate a separate result set. Consider this a solution to pick out all even numbers from a list of integers...
 
 ```ruby
 def even_numbers(list)
@@ -113,7 +113,7 @@ def even_numbers(list)
 end
 ```
 
-The code creates an empty list to aggregate results and iterates over the list, accumulating the even values. Finally, it returns the list. This code serves the purpose, but is not very idiomatic. Instead, a better approach is to use Ruby's enumerable methods.&#x20;
+The code creates an empty list to aggregate results and then iterates over the list, accumulating the even values. Finally, it returns the list. This code serves the purpose, but isn't idiomatic. A better approach is to use Ruby's enumerable methods.&#x20;
 
 ```
 def even_numbers(list)
@@ -131,13 +131,15 @@ Here's another approach useful for more complicated transforms.&#x20;
 
 ### Sorting and filtering in memory
 
+Sorting  lists to manipulating
+
 ### Next Steps
 
-I highly recommend reading the documentation for Ruby's core classes and modules, including `Array`, `Hash`, and `Enumerable.` Each is a trove of tools. Write small code samples to learn how each one works. &#x20;
+I highly recommend reading the documentation for Ruby's core classes and modules, including `Array`, `Hash`, and `Enumerable.` Each is a trove of tools, and chances are a method exists to  solve your problem. Turn knowledge into practice by wrting small code samples to learn how each method works. &#x20;
 
-Integrate Rubocop into your workflow, even your text editor. Rubocop keeps your code looking nice, but it can also point out where code is idiosyncratic. Writing code with Rubocop assistance is one of the best ways to create the Ruby way.&#x20;
+Add Rubocop into your workflow, even your text editor. Rubocop keeps your code looking nice, but it can also flag idiosyncratic code. Writing code with Rubocop assistance is one of the best ways to learn to code the Ruby way.&#x20;
 
-Finally, read other developers' code, especially open source Ruby projects.&#x20;
+Finally, read other developers' code, especially open source Ruby projects. To peruse the code of any gem, run `bundle open <gem>`, where `<gem>` is the name of a library. If you've included a debugger in your _Gemfile_, you can even set breakpoints in any gem and step through code.&#x20;
 
 ***
 
