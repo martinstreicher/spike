@@ -63,7 +63,7 @@ Here are nine more examples of non-idiomatic Ruby code I often see and how to re
 
 ***
 
-### Avoid long expressions to avoid \`nil\`
+### Avoid long expressions to avoid `nil`
 
 `nil` represents "nothing" in Ruby. It's a legitimate value and is its own class (`NilClass`) with methods. Like other classes, if you call a method not defined on `nil`, Ruby throws an exception akin to `undefined method 'xxx' for nil:NilClass`.&#x20;
 
