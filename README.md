@@ -1,10 +1,10 @@
 ---
 description: >-
-  Here are ten faux pas I often see in Ruby code. Learn how to turn these
+  Here are five faux pas I often see in Ruby code. Learn how to turn these
   idiosyncrasies into idioms.
 ---
 
-# Ten Things to Avoid in Ruby
+# Five Things to Avoid in Ruby
 
 As a contract software developer, I am exposed to lots and lots of Ruby code. Some code is readable, some obfuscated. Some code eschews whitespace, as if carriage returns were a scarce natural resource, while other code resembles a living room fashioned by Vincent Van Duysen. Code, like the people who author it, varies. Yet it's ideal to minimize variation. Time and effort are best spent on novel problems.&#x20;
 
