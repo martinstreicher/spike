@@ -105,14 +105,30 @@ Ruby uses `self` in three different substantive ways:
 * To refer to the current instance of an object&#x20;
 * To differentiate between a local variable and a method if both have the same name&#x20;
 
-Here's an example of the first usage, defining a class method...
+Here's an example class demonstrating all three usages.&#x20;
 
+{% code lineNumbers="true" %}
 ```ruby
 class Rectangle 
   def self.area(length, width)
+    new(length, width).area
   end 
+  
+  def initialize(length, width)
+    @length = length 
+    @width  = width
+  end 
+  
+  def area 
+    length * width
+  end 
+  
+  private 
+  
+  attr_reader :length, :width
 end 
 ```
+{% endcode %}
 
 ### Avoid collecting results in temporary variables
 
