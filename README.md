@@ -99,9 +99,22 @@ Now, if `a_list_of_values` is `nil`, the result of the expression is `nil`.&#x20
 
 ### Avoid using `self` to refer to self
 
+Ruby uses `self` in three different substantive ways:
 
+* To define class methods
+* To refer to the current instance of an object&#x20;
+* To differentiate between a local variable and a method if both have the same name&#x20;
 
-### Collecting results in temporary variables
+Here's an example of the first usage, defining a class method...
+
+```ruby
+class Rectangle 
+  def self.area(length, width)
+  end 
+end 
+```
+
+### Avoid collecting results in temporary variables
 
 A common code chore is processing lists of records. You might eliminate records due to some criteria; map each value to another value; or separate one set of records into multiple lists. A typical solution is to iterate over the list and accumulate a separate result set. Consider this a solution to pick out all even numbers from a list of integers...
 
