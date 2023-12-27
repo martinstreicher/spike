@@ -25,6 +25,8 @@ If you've delved any into Ruby, you can appreciate how expressive, compact, fun,
 However, per Ruby idiom, some `if` statements are better than others. For instance, the following blocks of code achieve the same result, but one is idiomatic to Ruby. &#x20;
 
 ```
+// Verbose approach
+
 actor = nil 
 
 if response == 1
@@ -39,6 +41,8 @@ end
 ```
 
 ```ruby
+// Idiomatic approach
+
 actor = 
   if response == 1
     "Groucho"
@@ -51,7 +55,9 @@ actor =
   end 
 ```
 
-Almost every Ruby statement and expression yields a value, including `if`, which returns the value of the final statement of the block in the matching condition. The latter version of the `if` statement code leverages this behavior. If `response` is `2`, `actor` is set to `Chico`. Assigning the result of an `if` statement is idiomatic to Ruby. (The same construct can be applied to `case`, `unless`, `begin/end`, and others.
+Almost every Ruby statement and expression yields a value, including `if`, which returns the value of the final statement of code of the matching condition. The latter version of the `if` statement code leverages this behavior. If `response` is `2`, `actor` is set to `Chico`. Assigning the result of an `if` statement is idiomatic to Ruby. (The same construct can be applied to `case`, `unless`, `begin/end`, and others.)&#x20;
+
+There is another Ruby idiom present: you need not predefine a variable used within an `if` statement (or`while`,  `for`, and others). So, the latter code removes the line `actor = nil`. In Ruby, unlike other languages, the body of  an `if` statement is not considered a block for scope.&#x20;
 
 Here are nine more examples of non-idiomatic Ruby code I often see and how to rewrite them like a "local".&#x20;
 
