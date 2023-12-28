@@ -24,7 +24,7 @@ If you've delved any into Ruby, you can appreciate how expressive, compact, fun,
 
 However, per Ruby idiom, some `if` statements are better than others. For instance, the following blocks of code achieve the same result, but one is idiomatic to Ruby. &#x20;
 
-```
+```ruby
 // Verbose approach
 
 actor = nil 
@@ -63,7 +63,7 @@ Here are nine more examples of non-idiomatic Ruby code I often see and how to re
 
 ***
 
-### Avoid long expressions to avoid `nil`
+### Avoid long expressions to detect `nil`
 
 `nil` represents "nothing" in Ruby. It's a legitimate value and is its own class (`NilClass`) with methods. Like other classes, if you call a method not defined on `nil`, Ruby throws an exception akin to `undefined method 'xxx' for nil:NilClass`.&#x20;
 
@@ -105,7 +105,7 @@ Now, if `a_list_of_values` is `nil`, the result of the expression is `nil`.&#x20
 
 ### Avoid using `self` to refer to self
 
-Ruby uses `self` in three different substantive ways:
+Ruby uses `self` in three substantive ways:
 
 * To define class methods
 * To refer to the current instance of an object&#x20;
