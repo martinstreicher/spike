@@ -113,7 +113,6 @@ Ruby uses `self` in three substantive ways:
 
 Here's an example class demonstrating all three usages.&#x20;
 
-{% code lineNumbers="true" %}
 ```ruby
 class Rectangle 
   def self.area(length, width)
@@ -134,7 +133,6 @@ class Rectangle
   attr_reader :length, :width
 end 
 ```
-{% endcode %}
 
 ### Avoid collecting results in temporary variables
 
