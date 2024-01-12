@@ -2,6 +2,7 @@
 description: >-
   Writing can seem a daunting task, but with a little organization, any
   developer can do it.
+layout: editorial
 ---
 
 # How to Write Technical Articles
