@@ -4,3 +4,7 @@
 
 Sp!ke is the blog of Martin Streicher, a professional Ruby developer. 
 
+# Table of Contents
+
+* [Five Things to Avoid in Ruby](README.md), published 30 Jan 2024. 
+  
